@@ -1,8 +1,7 @@
-const isLess =(a , b) =>{
-    if(a < b ){
-console.log("Less")
-return
+const isLess = (a, b) => {
+    if ( a < b ) {
+       console.log("Less");
+       return
     }
-    console.log("false")
-
+    console.log("false");
 }
