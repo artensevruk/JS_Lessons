@@ -6,33 +6,39 @@
 // printArgs(10);
 // printArgs(10 , 10 );
 
-const fizzBazz = (a) => {
+const getFizzBazz = (a) => {
   if (a % 3 == 0 && a % 5 == 0) {
-    console.log("Fizz Bazz");
-    return
+   
+    return "Fizz Buzz"; 
   }
 
    if (a % 5 == 0) {
-    console.log("Bazz");
-    return
+   return "Fizz" ;
   } 
 
   if (a % 3 == 0) {
-    console.log("Fizz");
-    return
+    
+    return "Buzz";
   }
-
-    console.log(a);
+return a;
+  
   
 };
-fizzBazz(3);
-fizzBazz(5);
-fizzBazz(15);
-fizzBazz(2);
 
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/artensevruk/JS_Lessons.git
-// git push -u origin main
+
+const fizzBazz =(n) =>{
+for( let i=0 ; n > i ; i++){
+  getFizzBazz(i);
+  let resut = getFizzBazz(i);
+  console.log(resut);
+}
+
+}
+fizzBazz(12);
+
+
+
+
+
+
+
