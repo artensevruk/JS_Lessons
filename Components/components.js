@@ -1,4 +1,4 @@
-const items = ["red", "green", "blue"];
+
 
 const list = (items) => {
   
@@ -26,7 +26,16 @@ for(const i of items){
   return list;
 };
 
-document.body.append(list(items));
+
+const headerList = (title , items) =>{
+  const header = document.createElement("h1");
+  header.innerText = title ;
+  const wrapper =document.createElement("div");
+ 
+  const listComponent = list(items) ;
+  wrapper.append(header , listComponent);
+  return wrapper ;
+}
 
 
 
