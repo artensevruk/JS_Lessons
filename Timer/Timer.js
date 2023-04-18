@@ -1,45 +1,38 @@
 const setTime = document.getElementById("setTime");
 const timeContainer = document.getElementById("timeContainer");
-let interval 
-let secend;
-let isRun = false ;
+let interval;
+let second;
+let isRun = false;
 setTime.addEventListener("click", () => {
-  secend = prompt("Write secend");
-  timeContainer.innerHTML = secend;
+  second = prompt("Write second");
+  timeContainer.innerHTML = second;
   interval = startTimer();
 });
 
-const startTimer =() =>{
-  isRun = true ;
-  return setInterval(timer,1000);
-}
+const startTimer = () => {
+  isRun = true;
+  return setInterval(timer, 1000);
+};
 
 pause.addEventListener("click", () => {
-  if(isRun){
+  if (isRun) {
     clearInterval(interval);
-    pause.innerHTML = "Return";
-    isRun = false ;
-  }
-  else{
+    pause.innerHTML = "Start";
+    isRun = false;
+  } else {
     interval = startTimer();
     pause.innerHTML = "Pause";
   }
 });
 
-// pause.addEventListener("dblclick", () => {
-//   interval = startTimer();
-//   pause.innerHTML = "Pause";
-// });
-
 const timer = () => {
-  secend = secend - 1;
+  second = second - 1;
 
-  if (secend < 0) {
-    alert(" я всё ");
+  if (second < 0) {
+    alert("я всё");
     clearInterval(interval);
-    return
+    return;
   }
 
-
-  timeContainer.innerHTML = secend;
+  timeContainer.innerHTML = second;
 };
