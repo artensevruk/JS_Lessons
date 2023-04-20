@@ -1,20 +1,20 @@
 const list = (items) => {
-  const list = document.createElement("ul");
+  const list = createElement("ul");
 
   //   for(let i = 0 ; i < items.length ; i++){
-  //     const listElement = document.createElement("li");
+  //     const listElement =createElement("li");
   //     list.append(listElement);
   //     listElement.innerText = items[i];
   //   }
 
   // items.forEach(element => {
-  //     const listElement = document.createElement("li");
+  //     const listElement =createElement("li");
   //     list.append(listElement);
   //     listElement.innerText = element;
   // });
 
   for (const i of items) {
-    const listElement = document.createElement("li");
+    const listElement = createElement("li");
     list.append(listElement);
     listElement.innerText = i;
   }
@@ -23,9 +23,9 @@ const list = (items) => {
 };
 
 const headerList = (title, items) => {
-  const header = document.createElement("h1");
+  const header = createElement("h1");
   header.innerText = title;
-  const wrapper = document.createElement("div");
+  const wrapper = createElement("div");
 
   const listComponent = list(items);
   wrapper.append(header, listComponent);
@@ -33,16 +33,16 @@ const headerList = (title, items) => {
 };
 
 const counter = (count = 0) => {
-  const container = document.createElement("div");
-  const buttonPlus = document.createElement("button");
-  const buttonMinus = document.createElement("button");
-  const countSpan = document.createElement("span");
+  const container = createElement("div");
+  const buttonPlus = createElement("button");
+  const buttonMinus = createElement("button");
+  const countSpan = createElement("span");
   buttonMinus.innerText = "-";
   buttonPlus.innerText = "+";
   countSpan.innerText = count;
   container.append(buttonMinus, countSpan, buttonPlus);
 
-  const getHandler = delta => () => {
+  const getHandler = (delta) => () => {
     count += delta;
     countSpan.innerText = count;
   };
