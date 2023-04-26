@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
