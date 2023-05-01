@@ -32,3 +32,4 @@ export const cart = [
   { product: 'milk', amount: 2 },
   { product: 'chocolate bar', amount: 1 }
 ];
+  

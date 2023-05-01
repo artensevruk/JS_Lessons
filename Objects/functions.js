@@ -4,57 +4,37 @@
 
 export const getNames = (employees) => {
   const array = [];
-  for (let i = 0; employees.length > i; i++) {
-    const employee = employees[i];
+  for ( const employee of employees) {
     if (employee.name) {
       array.push(employee.name);
-    } else {
-      console.log("Такого обьекта нету");
-    }
+    } 
   }
   return array;
 }; // employees => arrayOfNames
-
-export const sum = (a, b) => {
-  return a + b;
-};
 
 /*
  * Подсчет суммы зарплат сотрудников
  */
 export const getSalariesSum = (employees) => {
   let sum = 0;
-  for (let i = 0; employees.length > i; i++) {
-    const employee = employees[i];
-    console.log(employee.salary);
+  for (const employee of employees) {
     if (employee.salary) {
       sum += employee.salary;
     }
-  }
+  } 
   return sum;
 }; // employees => salariesSum
 
 /*
  * Подсчет общей стоимости корзины
  */
-export const getCartTotalPrice = (cart, prices) => {
+export const getCartTotalPrice = (prices, cart) => {
+  let sum = 0;
+
   for (const cartItem of cart) {
-    let product = cartItem.product;
+   const {product , amount } = cartItem;
+    sum = sum + amount * prices[product];
+  }
 
-    // let amount = cartItem.amount;
-    console.log(product);
-    // console.log(prices); 
-
-    for (let key in prices) {
-      if(product === key ){
-        console.log(key); 
-        
-      }
-    }
-    
-  };
- 
-    
-   
-  
+  return sum;
 };
