@@ -40,11 +40,18 @@ export const getSalariesSum = (employees) => {
 export const getCartTotalPrice = (cart, prices) => {
   for (const cartItem of cart) {
     let product = cartItem.product;
-    let amount = cartItem.amount;
+
+    // let amount = cartItem.amount;
     console.log(product);
-    if (product == prices ){
-      console.log(prices); 
+    // console.log(prices); 
+
+    for (let key in prices) {
+      if(product === key ){
+        console.log(key); 
+        
+      }
     }
+    
   };
  
     
