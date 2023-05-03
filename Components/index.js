@@ -1,3 +1,4 @@
+import { counter , headerList , list } from "./components.js";
 
 const colors = ["red", "green", "blue"];
 
