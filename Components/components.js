@@ -1,5 +1,12 @@
 import { createElement } from "./utils.js";
 
+
+ export const input = () => {
+  const input = createElement('input', { value: 'default text' });
+  return input;
+
+}
+
 export const list = (items) => {
   const childElements = items.map((item) => createElement("li", item));
   const list = createElement("ul", childElements);
@@ -39,4 +46,8 @@ export const counter = (count = 0) => {
     countSpan,
     createElement("button", "-", { onclick: getHandler(-1) }),
   ]);
+
+   
 };
+
+
