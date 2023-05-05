@@ -40,3 +40,5 @@ const appendChildren = (elements, domElement) => {
     domElement.append(elements[i]);
   }
 };
+
+

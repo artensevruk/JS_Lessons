@@ -1,4 +1,4 @@
-import { counter , headerList , list , input} from "./components.js";
+import { counter , headerList , list , input , toDoApp} from "./components.js";
 
 const colors = ["red", "green", "blue"];
 
@@ -13,7 +13,8 @@ headerList("numbers" , [1 , 2 , 2]),
 
 counter(2),
 counter(),
-input()
+input(),
+toDoApp()
 );
 
 
