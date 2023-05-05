@@ -1,4 +1,5 @@
-import { counter , headerList , list , input , toDoApp} from "./components.js";
+import { counter , headerList , list , input } from "./components.js";
+import { toDoApp } from "./toDo.js";
 
 const colors = ["red", "green", "blue"];
 
@@ -16,6 +17,8 @@ counter(),
 input(),
 toDoApp()
 );
+
+localStorage.setItem("toDo", "toDoApp");
 
 
 

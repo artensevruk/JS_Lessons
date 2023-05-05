@@ -1,0 +1,3 @@
+
+
+localStorage.setItem("myCat", "Tom");
