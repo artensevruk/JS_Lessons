@@ -1,4 +1,11 @@
-const list = (items) => {
+import { createElement } from "./utils.js";
+
+export const input = () => {
+  const input = createElement("input", { value: "default text" });
+  return input;
+};
+
+export const list = (items) => {
   const childElements = items.map((item) => createElement("li", item));
   const list = createElement("ul", childElements);
 
@@ -16,11 +23,11 @@ const list = (items) => {
   return list;
 };
 
-const headerList = (title, items) => {
+export const headerList = (title, items) => {
   return createElement("div", [createElement("h1", title), list(items)]);
 };
 
-const counter = (count = 0) => {
+export const counter = (count = 0) => {
   const countSpan = createElement("span", count);
 
   const getHandler = (delta) => () => {
