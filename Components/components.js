@@ -1,4 +1,4 @@
-import { createElement } from "./utils.js";
+import { createElement } from "../domUtils.js";
 
 export const input = () => {
   const input = createElement("input", { value: "default text" });
