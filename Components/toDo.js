@@ -21,8 +21,9 @@ export const inlineForm = (onsubmit) => {
   export const toDoApp = () => {
     const form = inlineForm((text) => {
       const div = createElement("div", text);
-      list.append(div);
       localStorage.setItem("text", text.toString());
+      list.append(div);
+      
     });
  
     const list = todoList();

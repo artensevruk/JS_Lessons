@@ -16,9 +16,10 @@ counter(2),
 counter(),
 input(),
 toDoApp()
+
 );
 
-localStorage.setItem("toDo", "toDoApp");
+
 
 
 
