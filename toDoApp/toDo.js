@@ -1,16 +1,13 @@
 import { inlineForm  , todoList} from "./components.js";
 import{createElement} from "../domUtils.js"
+import {readToDos , writeToDo } from "./storage.js";
 
 
 export const toDoApp = () => {
-  let array  = JSON.parse(localStorage.getItem("to-do")) || [] ;
- 
-   
-  
+   let array = readToDos();
     const form = inlineForm((text) => {
       const div = createElement("div", text);
-      array.push(text);
-     localStorage.setItem("to-do" , JSON.stringify(array)); 
+      writeToDo(text);
 
       list.append(div);
     });
