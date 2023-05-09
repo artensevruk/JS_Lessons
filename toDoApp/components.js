@@ -1,9 +1,9 @@
-import { createElement } from "../domUtils.js";
+import { createElement as $ } from "../domUtils.js";
 
 export const inlineForm = (onsubmit) => {
-  const input = createElement("input");
-  const button = createElement("input", { type: "submit" });
-  const inlineForm = createElement("form", [input, button]);
+  const input = $("input");
+  const button = $("input", { type: "submit" });
+  const inlineForm = $("form", [input, button]);
 
   inlineForm.onsubmit = (event) => {
     onsubmit(input.value);
@@ -14,11 +14,12 @@ export const inlineForm = (onsubmit) => {
   return inlineForm;
 };
 
-export const todoList = (elements) => {
-  const childElements = elements.map((element) =>
-    createElement("div", element)
+export const todoList = (toDos) => {
+  return $(
+    "div",
+    toDos.map((item) => $("div", [$("span" , item) , $("input" , {type : "checkbox"})])
+    )
   );
-  const list = createElement("div", childElements);
 
-  return list;
+
 };
