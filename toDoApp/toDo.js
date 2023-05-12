@@ -13,7 +13,6 @@ export const toDoApp = () => {
       list.append(div);
     });
     const list = toDoList(array);
-    
     const div = createElement("div", { className : "toDoApp"} , [form, list]);
     return div;
 }
