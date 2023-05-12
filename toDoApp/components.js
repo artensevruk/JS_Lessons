@@ -1,8 +1,14 @@
 import { createElement as $ } from "../domUtils.js";
 
 export const inlineForm = (onsubmit) => {
-  const input = $("input");
-  const button = $("input", { type: "submit" });
+  const input = $("input" , { className: "ToDoInput"});
+  const button = $("input", {
+
+    type: "submit",
+    value: "Add",
+    className: "AddButton"
+
+  });
   const inlineForm = $("form", [input, button]);
 
   inlineForm.onsubmit = (event) => {
@@ -14,12 +20,16 @@ export const inlineForm = (onsubmit) => {
   return inlineForm;
 };
 
-export const todoList = (toDos) => {
+export const toDoListItem = (toDo) => {
+  return $("div", {className : "ToDoItem"} ,  [
+    $("span", toDo.text),
+    $("input", { type: "checkbox", checked: toDo.done , className : "checkBox"}),
+  ]);
+};
+
+export const toDoList = (toDos) => {
   return $(
-    "div",
-    toDos.map((item) => $("div", [$("span" , item) , $("input" , {type : "checkbox"})])
-    )
+    "div", {className :  "toDoList"},
+    toDos.map((toDo) => toDoListItem(toDo))
   );
-
-
 };

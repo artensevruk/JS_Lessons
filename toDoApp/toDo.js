@@ -1,4 +1,4 @@
-import { inlineForm  , todoList} from "./components.js";
+import { inlineForm  , toDoList , toDoListItem} from "./components.js";
 import{createElement} from "../domUtils.js"
 import {readToDos , writeToDo } from "./storage.js";
 
@@ -6,13 +6,14 @@ import {readToDos , writeToDo } from "./storage.js";
 export const toDoApp = () => {
    let array = readToDos();
     const form = inlineForm((text) => {
-      const div = createElement("div", text);
-      writeToDo(text);
+      const toDo = {text , done : false};
+      const div = toDoListItem(toDo);
+      writeToDo(toDo); 
 
       list.append(div);
     });
-    const list = todoList(array);
+    const list = toDoList(array);
     
-    const div = createElement("div", [form, list]);
+    const div = createElement("div", { className : "toDoApp"} , [form, list]);
     return div;
 }
