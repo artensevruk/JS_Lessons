@@ -12,8 +12,8 @@ export const inlineForm = (onsubmit) => {
   const inlineForm = $("form", [input, button]);
 
   inlineForm.onsubmit = (event) => {
-    onsubmit(input.value);
     event.preventDefault();
+    onsubmit(input.value);
     input.value = "";
   };
 
