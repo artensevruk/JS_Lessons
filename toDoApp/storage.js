@@ -2,6 +2,14 @@ const key = "toDos";
 
 export const readToDos = () => {
   const array = JSON.parse(localStorage.getItem(key)) || [];
+  const nextId = 0;
+  
+if (localStorage.hasOwnProperty('nextId')) {
+  localStorage.setItem('nextId', +nextId);
+} else {
+  localStorage.setItem('nextId', nextId);
+}
+
   return array;
 };
 
