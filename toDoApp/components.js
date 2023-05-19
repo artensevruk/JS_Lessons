@@ -1,4 +1,6 @@
 import { createElement as $ } from "../domUtils.js";
+import {update} from "./storage.js";
+
 
 export const inlineForm = (onsubmit) => {
   const input = $("input" , { className: "ToDoInput"});
@@ -21,11 +23,21 @@ export const inlineForm = (onsubmit) => {
 };
 
 export const toDoListItem = (toDo) => {
+
+const clickOnCheckBox = () =>{
+toDo.done = !toDo.done
+update(toDo);
+
+}
+
   return $("div", {className : "ToDoItem"} ,  [
     $("span", toDo.text),
-    $("input", { type: "checkbox", checked: toDo.done , className : "checkBox"}),
+    $("input", { type: "checkbox", checked: toDo.done , className : "checkBox"  , onchange : clickOnCheckBox}),
   ]);
+
 };
+
+
 
 export const toDoList = (toDos) => {
   return $(
@@ -33,3 +45,5 @@ export const toDoList = (toDos) => {
     toDos.map((toDo) => toDoListItem(toDo))
   );
 };
+
+

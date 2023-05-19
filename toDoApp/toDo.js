@@ -9,7 +9,6 @@ export const toDoApp = () => {
       const toDo = {text , done : false};
       const div = toDoListItem(toDo);
       writeToDo(toDo); 
-
       list.append(div);
     });
     const list = toDoList(array);
