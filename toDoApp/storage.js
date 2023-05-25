@@ -1,3 +1,5 @@
+
+
 const toDosKey = "toDos";
 const nextIdKey = "nextId";
 export const readToDos = () => {
@@ -41,12 +43,22 @@ export const writeToDo = (toDo) => {
   writeJson(array);
 };
 
+export const deleteElement = (deleteElement) =>{
+  const array = readToDos();
+  let newArray =[]; 
+  for(let i = 0 ; i < array.length; i++) {
+    if( array[i].id !== deleteElement.id){
+      newArray.push(toDo[i]);
+    }
+  }
+  writeJson(newArray);
+}
 
 // export function checkCheckbox(toDo) {
 //   const array = readToDos();
 //   const checkbox = document.querySelector("checkBox");
 //   if (checkbox.checked) {
-   
+
 //     let nextId = localStorage.getItem(nextIdKey);
 
 //     nextId = +nextId + 2;
@@ -60,4 +72,3 @@ export const writeToDo = (toDo) => {
 //     console.log("Checkbox is not checked");
 //   }
 // }
-

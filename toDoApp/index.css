@@ -3,6 +3,8 @@ body{
     background-color: rgb(223, 220, 220) ;
 }
 
+
+
 .toDoApp{
 font-family: Oswald;
  text-align: center;
@@ -12,11 +14,11 @@ font-family: Oswald;
 }
 
 .ToDoItem{
-    display: flex;
+
     align-items: center;
 }
 .toDoList{
-    display: flex;
+    
     justify-content: center ;
 }
 .ToDoInput ,.AddButton {
@@ -47,4 +49,14 @@ span{
     height: 26px;
     margin-left: 15px;
     font-size: 40px;
+}
+.delete{
+    margin-left: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+padding-top: 15px;
+padding-bottom: 15px;
+background: black;
+border-radius: 40px;
+color: aliceblue;
 }
