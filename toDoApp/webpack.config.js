@@ -3,11 +3,11 @@ export default {
   plugins: [
     new  CopyPlugin({
 patterns : [
-    { from: "index.html", to: "dist" },
-    { from: "index.css", to: "dist" },
+    { from: "index.html", to: "." },
+    { from: "index.css", to: "." },
 ]
     })
   ],
   mode: "development",
-  devServer: { static: "./dist", hot: true },
+  devServer: { static: "./dist", hot: true , devMiddleware: { writeToDisk: true } },
 };

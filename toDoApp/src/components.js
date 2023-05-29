@@ -1,7 +1,6 @@
 import $ from "create-element";
 import { update, deleteElement } from "./storage.js";
 
-alert("Hello");
 export const inlineForm = (onsubmit) => {
   const input = $("input", { className: "ToDoInput" });
   const button = $("input", {
