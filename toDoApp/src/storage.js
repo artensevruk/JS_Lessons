@@ -23,8 +23,6 @@ export const update = (updatedToDo) => {
       writeJson(toDos);
     }
   }
-
-  return storedToDo;
 };
 
 const writeJson = (array) => {
@@ -48,7 +46,7 @@ export const deleteElement = (deleteElement) =>{
   let newArray =[]; 
   for(let i = 0 ; i < array.length; i++) {
     if( array[i].id !== deleteElement.id){
-      newArray.push(toDo[i]);
+      newArray.push(array[i]);
     }
   }
   writeJson(newArray);
