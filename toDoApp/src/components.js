@@ -1,6 +1,5 @@
 import $ from "create-element";
 import { update, deleteElement } from "./storage.js";
- 
 
 export const inlineForm = (onsubmit) => {
   const input = $("input", { className: "ToDoInput" });
@@ -14,8 +13,12 @@ export const inlineForm = (onsubmit) => {
 
   inlineForm.onsubmit = (event) => {
     event.preventDefault();
-    onsubmit(input.value);
+    
+    if (input.value.trim() !== "") {
+      onsubmit(input.value);
     input.value = "";
+    }
+    
   };
 
   return inlineForm;

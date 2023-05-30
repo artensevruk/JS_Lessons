@@ -32,7 +32,6 @@ const writeJson = (array) => {
 export const writeToDo = (toDo) => {
   const array = readToDos();
   let nextId = localStorage.getItem(nextIdKey);
-
   nextId = +nextId + 1;
   toDo.id = nextId;
   localStorage.setItem(nextIdKey, nextId);
