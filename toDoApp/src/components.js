@@ -2,14 +2,14 @@ import $ from "create-element";
 import { update, deleteElement } from "./storage.js";
 
 export const inlineForm = (onsubmit) => {
-  const input = $("input", { className: "ToDoInput" });
+  const input = $("input", { className: "inlineInput" });
   const button = $("input", {
     type: "submit",
     value: "Add",
     className: "AddButton",
   });
 
-  const inlineForm = $("form", [input, button]);
+  const inlineForm = $("form", {className: "inlineForm"} , [input, button]);
 
   inlineForm.onsubmit = (event) => {
     event.preventDefault();
@@ -26,7 +26,7 @@ export const inlineForm = (onsubmit) => {
 
 export const deleteToDoButton = (toDo, onDeleted) => {
   return $("button", {
-    value: "Delete",
+    innerText: "x",
     className: "delete",
     onclick: (event) => {
       onDeleted();
