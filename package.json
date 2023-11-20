@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "test": "mocha 'pick/**/*.test.js'"
+    "test": "mocha 'src/**/*.test.js'"
   },
   "devDependencies": {
     "mocha": "^10.2.0"
