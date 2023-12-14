@@ -1,4 +1,4 @@
-const  getImageSize = (imageUrl) => {
+export default   getImageSize = (imageUrl) => {
   const image = document.createElement("img");
 
   return new Promise(function (resolve, reject) {
@@ -10,4 +10,3 @@ const  getImageSize = (imageUrl) => {
 };
 
 
-export {getImageSize}
