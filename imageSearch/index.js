@@ -1,5 +1,5 @@
 
-import getImageSize from './imageSearch.js';
+import  {getImageSize} from './imageSearch.js';
 
 
 getImageSize(
