@@ -1,5 +1,5 @@
 
-import {getImage} from './imageSearch.js';
+import {getImage} from './getImage.js';
 
 
 getImage(
