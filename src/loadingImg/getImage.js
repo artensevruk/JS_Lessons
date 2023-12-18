@@ -1,4 +1,4 @@
-const getImage = (imageUrl) => {
+export const getImage = (imageUrl) => {
   const image = document.createElement("img");
 
   return new Promise((resolve) => {
@@ -9,4 +9,4 @@ const getImage = (imageUrl) => {
   });
 };
 
-export {getImage};
+
